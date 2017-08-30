@@ -1,8 +1,12 @@
 The goal of this app is to create a rejection app. This will track instances of wins and rejections; 1 point per win, 10 points per rejection. Each instance will include what was requested, who was asked, whether it was successful ot not, and the time and date of the question.
 
 Started: 9:30am; Wed Aug 30, 2017
-Finished basic level: 3pm; Wed Aug 30, 2017
-	Possible improvements include changing getCurrentScore for loop to forEach()
+Basic level complete: 3pm; Wed Aug 30, 2017
+	Possible improvements
+		Switch from button to submit button and parse the POST
+Mid level complete: TBD
+Advanced level complete: TBD
+Extra credit: TBD
 
 
 

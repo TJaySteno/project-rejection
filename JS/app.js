@@ -33,31 +33,22 @@ function clearInputs() {
 //App logic
 function retrieveInfo() {
 	//Store user inputs as JS object
-	if (question.value === '' ||
-		person.value === '' ||
-		acceptOrReject.value === 'null' ||
-		day.value === '' ||
-		year.value === '') {
-			throw Error('Please answer every question');
-	} else if (isNaN(Number(day.value)) || isNaN(Number(year.value))) {
-		throw Error('Day and year values must be numbers');
-	} else {
-		const instance = {
-			question: question.value,
-			person: person.value,
-			acceptOrReject: Number(acceptOrReject.value),
-			date: `${month.value} ${day.value}, ${year.value}`
-		}
-		return instance;
+	handler();
+	const instance = {
+		question: question.value,
+		person: person.value,
+		acceptOrReject: Number(acceptOrReject.value),
+		date: `${month.value} ${day.value}, ${year.value}`
 	}
+	return instance;
 }
 
 function getCurrentScore() {
 	//Add up points from array's objects
 	let score = 0;
-	for (let i = 0; i < storedInstances.length; i++) {
-		score += storedInstances[i].acceptOrReject;
-	}
+	storedInstances.forEach(function(storedInstances){
+		score += storedInstances.acceptOrReject
+	});
 	return score;
 }
 
@@ -70,5 +61,20 @@ function submit() {
 		localStorage.setItem("storedInstances", JSON.stringify(storedInstances));
 	} else {
 		throw Error('Sorry! No Web Storage support');
+	}
+}
+
+//Error handler
+function handler() {
+	if (question.value === '' ||
+		person.value === '' ||
+		acceptOrReject.value === 'null' ||
+		day.value === '' ||
+		year.value === '') {
+			throw Error('Please answer every question');
+	} else if (isNaN(Number(day.value)) || day.value > 31 || day.value < 1 ) {
+		throw Error('Days must be numbers between 1 and 31');
+	} else if (isNaN(Number(year.value)) || year.value.length !== 4 ) { 
+		throw Error('Years must be 4 digit numbers');
 	}
 }
