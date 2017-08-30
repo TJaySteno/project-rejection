@@ -1,5 +1,11 @@
 The goal of this app is to create a rejection app. This will track instances of wins and rejections; 1 point per win, 10 points per rejection. Each instance will include what was requested, who was asked, whether it was successful ot not, and the time and date of the question.
 
+Started: 9:30am; Wed Aug 30, 2017
+Finished basic level: 3pm; Wed Aug 30, 2017
+	Possible improvements include changing getCurrentScore for loop to forEach()
+
+
+
 
 
 Idea from medium.com. The following is the challenge copy and pasted

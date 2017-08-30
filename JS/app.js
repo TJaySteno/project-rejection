@@ -9,7 +9,14 @@ const day = month.nextElementSibling;
 const year = day.nextElementSibling;
 
 //Create variables
-const storedInstances = [];
+let storedInstances;
+if (localStorage.storedInstances) {
+	//If storedInstances exists in localStorage, parse it
+	storedInstances = JSON.parse(localStorage.storedInstances);
+} else {
+	//else create in a new array
+	storedInstances = new Array();
+}
 
 //Basic functions
 function clearInputs() {
@@ -59,4 +66,9 @@ function submit() {
 	const instance = retrieveInfo();
 	storedInstances.push(instance);
 	currentScore.textContent = `Current score: ${getCurrentScore()}`;
+	if (typeof(Storage) !== "undefined") {
+		localStorage.setItem("storedInstances", JSON.stringify(storedInstances));
+	} else {
+		throw Error('Sorry! No Web Storage support');
+	}
 }
