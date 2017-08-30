@@ -35,6 +35,7 @@ xdescribe('storeInfo', function() {
 }
 
 xdescribe('getCurrentScore', function() {
+	//getCurrentScore adds all values from the array
 	const getCurrentScore = require('../JS/app.js').getCurrentScore;
 	let storedInstances,
 		currentScore;
@@ -66,9 +67,9 @@ xdescribe('getCurrentScore', function() {
 	//Current score (var or first index of array)
 
 //Actions to be done
-	//retrieveInfo(); Take information from html, return as object named instance
+	//retrieveInfo(); Take information from form, return as object named instance
 		//Concat date
 		//Reject bad values here (ie only numbers in date)
 	//storeInfo(); Add object to array named storedInstances
 	//getCurrentScore(); add current score
-	//printScore(); Print current score
+	//printScore(); Print current score to h3

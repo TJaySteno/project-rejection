@@ -85,6 +85,7 @@ const day = month.nextElementSibling;
 const year = day.nextElementSibling;
 
 function clearInputs() {
+	//Return input fields to normal
 	question.value = '';
 	person.value = '';
 	acceptOrReject.value = '';
@@ -93,9 +94,35 @@ function clearInputs() {
 	year.value = '';
 	question.focus();
 }
-	//retrieveInfo(); Take information from html, return as object named instance
-		//Concat date
-		//Reject bad values here (ie only numbers in date)
+
+function retrieveInfo() {
+	//Store user inputs as JS object
+	if (question.value === '' ||
+		person.value === '' ||
+		acceptOrReject.value === 'null' ||
+		day.value === '' ||
+		year.value === '') {
+			throw Error('Please answer every question');
+	} else if (isNaN(Number(day.value)) || isNaN(Number(year.value))) {
+		throw Error('Day and year values must be numbers');
+	} else {
+		const instance = {
+			question: question.value,
+			person: person.value,
+			acceptOrReject: Number(acceptOrReject.value),
+			date: `${month.value} ${day.value}, ${year.value}`
+		}
+		return instance;
+	}
+}
+
+function submit() {
+	//Actions to perform on button click
+	const instance = retrieveInfo();
+	
+	currentScore.textContent = `Current score: ${instance.acceptOrReject}`;
+}
+	
 	//storeInfo(); Add object to array named storedInstances
 	//getCurrentScore(); add current score
 	//printScore(); Print current score
