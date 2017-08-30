@@ -9,7 +9,11 @@
 	//storeInfo(); Add object to array named storedInstances
 	//getCurrentScore(); add current score
 	//printScore(); Print current score
-
+	
+function storeInfo(instance) {
+	
+}
+	
 /* xdescribe('storeInfo', function() {
 	//storeInfo adds an object to an array
 	const storeInfo = require('../JS/app.js').storeInfo;
@@ -70,3 +74,28 @@ xdescribe('getCurrentScore', function() {
 		expect(currentScore).to.equal(33);
 	});
 } */
+
+const currentScore = document.getElementById('currentScore');
+const fieldset = document.querySelector('fieldset');
+const question = fieldset.firstElementChild.nextElementSibling.nextElementSibling;
+const person = question.nextElementSibling.nextElementSibling.nextElementSibling;
+const acceptOrReject = person.nextElementSibling.nextElementSibling.nextElementSibling;
+const month = acceptOrReject.nextElementSibling.nextElementSibling.nextElementSibling;
+const day = month.nextElementSibling;
+const year = day.nextElementSibling;
+
+function clearInputs() {
+	question.value = '';
+	person.value = '';
+	acceptOrReject.value = '';
+	month.value = 'Jan';
+	day.value = '';
+	year.value = '';
+	question.focus();
+}
+	//retrieveInfo(); Take information from html, return as object named instance
+		//Concat date
+		//Reject bad values here (ie only numbers in date)
+	//storeInfo(); Add object to array named storedInstances
+	//getCurrentScore(); add current score
+	//printScore(); Print current score

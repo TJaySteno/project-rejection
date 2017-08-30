@@ -8,43 +8,41 @@
 	</head>
 	<header>
 		<h1>Project Rejection</h1>
-		<h3 id="currentScore">Current score:</h2>
+		<h3 id="currentScore">Current score: 0</h2>
 	</header>
 	<body>
-		<form>
-			<fieldset>
-				<legend>Tell me what happened</legend>
-				Question asked<br>
-				<input type="text" class="long" id="question" autofocus="autofocus"><br>
-				Person asked<br>
-				<input type="text" class="long" id="person"><br>
-				Accepted or rejected<br>
-				<select name="acceptOrReject">
-					<option value=""></option>
-					<option value="1">Accepted</option>
-					<option value="10">Rejected</option>
-				</select><br>
-				Date<br>
-				<select name="month">
-					<option value="Jan">Jan</option>
-					<option value="Feb">Feb</option>
-					<option value="Mar">Mar</option>
-					<option value="Apr">Apr</option>
-					<option value="May">May</option>
-					<option value="Jun">Jun</option>
-					<option value="Jul">Jul</option>
-					<option value="Aug">Aug</option>
-					<option value="Sep">Sep</option>
-					<option value="Oct">Oct</option>
-					<option value="Nov">Nov</option>
-					<option value="Dec">Dec</option>
-				</select> 
-				<input type="text" class="short" id="day" placeholder="Day">
-				<input type="text" class="short" id="person" placeholder="Year">
-				<br>
-				<button onClick="submit(); return false;">Submit</button>
-			</fieldset>
-		</div>
+		<fieldset>
+			<legend>Tell me what happened</legend>
+			Question asked<br>
+			<input type="text" class="long" id="question" autofocus="autofocus"><br>
+			Person asked<br>
+			<input type="text" class="long" id="person"><br>
+			Accepted or rejected<br>
+			<select name="acceptOrReject">
+				<option value=null></option>
+				<option value=1>Accepted</option>
+				<option value=10>Rejected</option>
+			</select><br>
+			Date<br>
+			<select name="month">
+				<option value="Jan">Jan</option>
+				<option value="Feb">Feb</option>
+				<option value="Mar">Mar</option>
+				<option value="Apr">Apr</option>
+				<option value="May">May</option>
+				<option value="Jun">Jun</option>
+				<option value="Jul">Jul</option>
+				<option value="Aug">Aug</option>
+				<option value="Sep">Sep</option>
+				<option value="Oct">Oct</option>
+				<option value="Nov">Nov</option>
+				<option value="Dec">Dec</option>
+			</select> 
+			<input type="text" class="short" id="day" placeholder="Day">
+			<input type="text" class="short" id="year" placeholder="Year">
+			<br>
+			<button onClick="submit(); return false;">Submit</button>
+		</fieldset>
 		<script src="JS/app.js"></script>
 	</body>
 	<footer>
