@@ -1,16 +1,6 @@
-//What I have to store
-	//Multiple instances of questions (array of objects)
-	//Current score (var or first index of array)
+const expect = require('chai').expect;
 
-//Actions to be done
-	//retrieveInfo(); Take information from html, return as object named instance
-		//Concat date
-		//Reject bad values here (ie only numbers in date)
-	//storeInfo(); Add object to array named storedInstances
-	//getCurrentScore(); add current score
-	//printScore(); Print current score
-
-/* xdescribe('storeInfo', function() {
+xdescribe('storeInfo', function() {
 	//storeInfo adds an object to an array
 	const storeInfo = require('../JS/app.js').storeInfo;
 	let instance, 
@@ -69,4 +59,16 @@ xdescribe('getCurrentScore', function() {
 	it('should add all values', function () {
 		expect(currentScore).to.equal(33);
 	});
-} */
+}
+
+//What I have to store
+	//Multiple instances of questions (array of objects)
+	//Current score (var or first index of array)
+
+//Actions to be done
+	//retrieveInfo(); Take information from html, return as object named instance
+		//Concat date
+		//Reject bad values here (ie only numbers in date)
+	//storeInfo(); Add object to array named storedInstances
+	//getCurrentScore(); add current score
+	//printScore(); Print current score
