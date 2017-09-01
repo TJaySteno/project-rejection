@@ -1,5 +1,6 @@
 //Define HTML elements
-const currentScore = document.getElementById('currentScore');
+const randomQuestion = document.getElementById('randomQuestion');
+const currentScore = randomQuestion.nextElementSibling;
 const fieldset = document.querySelector('fieldset');
 const question = fieldset.firstElementChild.nextElementSibling.nextElementSibling;
 const person = question.nextElementSibling.nextElementSibling.nextElementSibling;
@@ -62,7 +63,18 @@ function submit() {
 	} else {
 		throw Error('Sorry! No Web Storage support');
 	}
+	clearInputs();
 }
+
+(function() {
+	//Get and display current score & random past question
+	currentScore.textContent = `Current score: ${getCurrentScore()}`;
+	if (storedInstances.length) {
+		const d = Math.floor(Math.random() * storedInstances.length );
+		const question = storedInstances[d];
+	randomQuestion.textContent = `You asked ${question.person} for ${question.question}. ${question.date}`;
+	}
+})()
 
 //Error handler
 function handler() {
