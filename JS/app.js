@@ -74,7 +74,7 @@ function submit() {
 		const question = storedInstances[d];
 	randomQuestion.textContent = `You asked ${question.person} for ${question.question}. ${question.date}`;
 	}
-})()
+})();
 
 //Error handler
 function handler() {
